@@ -12,7 +12,9 @@ public class BinaryThread extends Thread {
 	@Override
 	public void run() {
 		while(true) {
-			this.frame.setText(StringGen.generateFrameBinary(50, 25));
+			int numRows = frame.getHeight() / frame.getLineHeight();
+			int numCols = frame.getWidth() / frame.getLineWidth();
+			this.frame.setText(StringGen.generateFrameBinary(numRows, numCols));
 			try {
 				sleep(50);
 			} catch (InterruptedException e) {
